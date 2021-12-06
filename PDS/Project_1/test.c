@@ -121,7 +121,7 @@ int main(int argc, char *argv[]) {
                 c3[i]++;
                 c3[coo_row[l]]++;
                 c3[coo_row[j]]++;
-                trngls = trngls+1;
+                trngls++;
 
               }
             }
