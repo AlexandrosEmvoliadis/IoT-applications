@@ -9,9 +9,9 @@
 
 
 
-uint32_t M, N,n, nz, i, j, k,l, *coo_col, *coo_row,sum ,trngls;
-struct timeval begin,end;
-
+uint32_t M, N,n, nz, i, j, k,l, *coo_col, *coo_row,sum ,trngls,NEIGHBOUR,NEIGHBOUR_1,NEIGHBOUR_2,N1,N2;
+int NUMBER_OF_THREADS;
+struct timeval begin, end;
 
 
 
@@ -109,47 +109,52 @@ int main(int argc, char *argv[]) {
      for (i=0;i<M;i++){
        c3[i]=0;
      }
-
-
+gettimeofday(&begin,0);
      trngls = 0;
 
-     gettimeofday(&begin,0);
-     /*counting triangles*/
 
-    cilk_for(uint32_t i=0;i<M;i++){
+    cilk_for (uint32_t i=0;i<M;i++){
+      if(col_pop[i+1]-col_pop[i]>1){
+        for (uint32_t j = col_pop[i];j<col_pop[i+1]-1;j++){
 
-       if (col_pop[i+1]-col_pop[i]>1){/*DO NOT GET INSIDE A POSITION CONNECTED WITH NO MORE THAN 1 ELEMENTS*/
-        for(uint32_t j=col_pop[i];j<col_pop[i+1]-1;j++){
+                N1 = j+1;
+                N2 = col_pop[coo_row[j]];
 
-          for(uint32_t k=col_pop[coo_row[j]];k<col_pop[coo_row[j]+1];k++){
 
-            for(uint32_t l=j+1;l<col_pop[i+1];l++){
+                while(N2<col_pop[coo_row[j]+1]&&N1<col_pop[i+1]){
 
-              if ( coo_row[l]==coo_row[k]){
-                c3[i]++;
-              }
+
+                    if(coo_row[N1]==coo_row[N2]){
+
+                        N1++;
+                        N2++;
+                        c3[i]++;
+                    }
+                    else if(coo_row[N1]>coo_row[N2]){
+
+                        N2++;
+                    }
+                    else{
+
+                        N1++;
+                  }
+                }
             }
-          }
         }
-     }
-  }
-  for (i = 0;i<M;i++){
-    trngls = trngls+c3[i];
-  }
-
-
-	gettimeofday(&end,0);
-    long seconds = end.tv_sec - begin.tv_sec;
+    }
+    for(i=0;i<M;i++){
+      trngls = c3[i]+trngls;
+    }
+     gettimeofday(&end,0);
+     long seconds = end.tv_sec - begin.tv_sec;
     long microseconds = end.tv_usec - begin.tv_usec;
     double elapsed = seconds + microseconds*1e-6;
-
-    free(col_pop);
     free(coo_row);
     free(c3);
 
     printf("The elapsed time is %f seconds", elapsed);
 
-    printf("%d\n",trngls);
+    printf("The total number of triangles are: %d\n",trngls );
 
 
 return 0;
