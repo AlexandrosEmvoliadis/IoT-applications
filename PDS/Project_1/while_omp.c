@@ -112,10 +112,10 @@ int main(int argc, char *argv[]) {
 gettimeofday(&begin,0);
      trngls = 0;
 
-     #pragma omp parallel private (i,j,N1,N2) num_threads(21)
+     #pragma omp parallel private (i,j,N1,N2) num_threads(21) reduction (+:trngls)
 
      for (i=0;i<M;i++){
-       #pragma omp for nowait schedule(dynamic)
+       #pragma omp for nowait schedule(static)
         for (j = col_pop[i];j<col_pop[i+1]-1;j++){
             if(col_pop[i+1]-col_pop[i]>1){
                 N1 = j+1;
@@ -129,7 +129,6 @@ gettimeofday(&begin,0);
 
                         N1++;
                         N2++;
-                        #pragma omp atomic
                         trngls++;
                     }
                     else if(coo_row[N1]>coo_row[N2]){
