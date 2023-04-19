@@ -53,15 +53,15 @@ Experiments with PCA and Vanilla Auto-Encoder, revealed poor performance.
 
 **RUN**
 
-1. Make sure that your environment contains svd library
-2. process_data.py will:
-  1. Perform time-series process
-  2. Features extraction (original, and original + additional features)
-  3. Create folders to store the .csv files
-3. data_augmentation.py will generate synthetic data using CopulaGAN and CT-GAN, for 100,1000 and 10.000 samples.
-4. augmented_data_tests_and_ml.py will:
-  1. Perform statistical analysis on the generated data
-  2. Perform Classification with an SVM*
+- Make sure that your environment contains svd library
+- process_data.py will:
+  - Perform time-series process
+  - Features extraction (original, and original + additional features)
+  - Create folders to store the .csv files
+- data_augmentation.py will generate synthetic data using CopulaGAN and CT-GAN, for 100,1000 and 10.000 samples.
+- augmented_data_tests_and_ml.py will:
+  - Perform statistical analysis on the generated data
+  - Perform Classification with an SVM*
 
 
 
