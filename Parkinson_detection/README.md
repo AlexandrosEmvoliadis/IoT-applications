@@ -49,8 +49,10 @@ Several classifiers tested, using GridSearch Library for parameter-tuning.
 Experiments on Decision Trees reveal:
 *F1 = 92.3%, Precision = 100%, Recall = 85.7% and Accuracy = 92.86%*, trained on 2000 samples
 
-Experiments with PCA and Vanilla Auto-Encoder, revealed poor performance
-**TO RUN THE SCRIPTS**
+Experiments with PCA and Vanilla Auto-Encoder, revealed poor performance.
+
+**RUN**
+
 1. Make sure that your environment contains svd library
 2. process_data.py will:
   1. Perform time-series process
