@@ -54,6 +54,7 @@ Experiments with PCA and Vanilla Auto-Encoder, revealed poor performance.
 **RUN**
 
 - Make sure that your environment contains svd library
+- Make sure that you are inside './Parkinson_detection' folder
 - process_data.py will:
   - Perform time-series process
   - Features extraction (original, and original + additional features)
