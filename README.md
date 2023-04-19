@@ -1,3 +1,5 @@
 # IoT-applications
 Projects for IoT
-Neural Networks,PDS,Software Engineering,Arduino Projects,Big Data Analysis and more...
+
+1. Parallel and Distributed Systems
+2. Artificial Inteligence for Healthcare
