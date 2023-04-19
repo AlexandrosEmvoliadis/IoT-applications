@@ -63,4 +63,4 @@ Experiments with PCA and Vanilla Auto-Encoder, revealed poor performance
 
 
 
-* Any traditional ML Classifier can be tested, using GridSearch library
+*Any traditional ML Classifier can be tested, using GridSearch library
