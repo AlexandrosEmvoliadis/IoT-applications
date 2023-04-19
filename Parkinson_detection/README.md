@@ -47,7 +47,7 @@ To increase the number of samples, Generative Adversarial Modeling is utilized. 
 
 Several classifiers tested, using GridSearch Library for parameter-tuning.
 
-Experiments on Decision Trees reveal:
+Experiments on Decision Trees, trained on synthetic data and tested on real, reveal:
 *F1 = 92.3%, Precision = 100%, Recall = 85.7% and Accuracy = 92.86%*, trained on 2000 samples
 
 Experiments with PCA and Vanilla Auto-Encoder, revealed poor performance.
