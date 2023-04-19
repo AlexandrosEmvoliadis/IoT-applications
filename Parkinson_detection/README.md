@@ -4,8 +4,8 @@
 
 EEG_Data Contains Real Data Gathered by the Gastric Belt, before and after having a meal
 
-n file-notation states for healthy, while pd states for Parkinson Disease
--data gathered from 7 healthy and 7 parkinson disease patients, hence 14 time-series
+- n file-notation states for healthy, while pd states for Parkinson Disease
+- data gathered from 7 healthy and 7 parkinson disease patients, hence 14 time-series
 
 **FEATURES EXTRACTION**
 *Time-series Processing*:
