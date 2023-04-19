@@ -12,7 +12,7 @@ EEG_Data Contains Real Data Gathered by the Gastric Belt, before and after havin
 1. Min Max scaling from [0,65535] to [-1,1]
 2. Standard Nosmalization
 3. Downsampling, due to very slow waves
-4. Band-Pass Butterworth IIR Filter (2nd-4th order)
+4. Band-Pass Butterworth IIR Filter (2nd-4th order, 4th is chosen due to more flat response)
 
 *Features extraction*:
 1. Mean and Standard Deviation For Dominant Power and Dominant Frequency (DP & DF)
