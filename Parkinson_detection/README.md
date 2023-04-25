@@ -34,6 +34,7 @@ Perform statistical tests for any features between Healthy and Parkinson Disease
 2. Mann-Whitney U test
 
 to reveal whether or not these samples are drawn from the same distribution
+
 **FURTHER PROCESSING FOR CLASSIFICATION**
 
 Very small number of samples, containing outliers. Some options:
