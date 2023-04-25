@@ -40,7 +40,9 @@ to reveal whether or not these samples are drawn from the same distribution
 Very small number of samples, containing outliers. Some options:
 1. Delete any feature contains outliers (will result to less features)
 2. Delete any sample that contains outliers (will result to even smaller dataset)
-3. Replace outliers by *IQR* method 
+3. Replace outliers by *IQR* method (Chosen One)
+  - Detect Outliers via IQR
+  - Replace these values with a random sample from the same Class 
 
 **CLASSIFICATION**
 
